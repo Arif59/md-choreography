@@ -4,6 +4,7 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 .clearfix:before, .clearfix:after {
@@ -39,6 +40,7 @@ a, a:link, a:visited {
 
 body {
 	background: #efefef;
+	font-size: 100%
 }
 
 .wrapper {
@@ -58,16 +60,9 @@ body {
 .card1-clip {
 	width: 18em;
 	height: 20em;
-	transition: all 0.5s ease;
+	transition: all 0.4s ease;
 	overflow: hidden;
 	-webkit-clip-path: inset(36% 0 36% 0);
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	-ms-align-items: center;
-	align-items: center;
 	position: relative;
 	border-radius: 3px;
 	pointer-events: none;
@@ -106,6 +101,24 @@ body {
           backface-visibility: hidden;
 }
 
+.separator {
+  opacity: 0;
+  width: 100%;
+  height: 0.01em;
+  background: #efefef;
+  position: relative;
+  transition: 0s;
+  transition-delay: 0s;
+  top: 3.2em;
+
+}
+
+.separator.show {
+  opacity: 1;
+  transition: 0.5s;
+  transition-delay: 0.1s;
+}
+
 .card2 {
 	width: 21em;
 	height: 20em;
@@ -121,6 +134,7 @@ body {
 	will-change: transform;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  transition-delay: 0s;
 }
 
 
@@ -128,8 +142,12 @@ body {
 	transform: scale(1, 1);
 }
 
+.card2.expanded {
+	transition-delay: 35ms;
+}
 
 .card1-clip.expanded {
+	transition: all 0.5s ease;
 	-webkit-clip-path: inset(0 0 0 0);
 }
 
@@ -139,6 +157,7 @@ body {
 }
 
 .card1-collapsed-content {
+	top: 8.3em;
 	position: relative;
 	transition: all 0.5s ease;
 	will-change: transform;
@@ -164,7 +183,7 @@ body {
           backface-visibility: hidden;
 }
 
-.rectangle, .rectangle2, .rectangle3, .rectangle4, .rectangle5, .rectangle6, .rectangle7, .rectangle8, .rectangle9 {
+.rectangle {
   height: 0.65em;
   width: 9em;
   background: #1976D2;
@@ -210,11 +229,12 @@ body {
 }
 
 .card1-expanded-content {
+	opacity: 0;
   min-width: 110%;
   z-index: 3;
   position: absolute;
   top: 23em;
-  transition: all 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.25s ease;
   left: 1em;
   will-change: transform;
   -webkit-backface-visibility: hidden;
@@ -222,7 +242,9 @@ body {
 }
 
 .card1-expanded-content.slide {
-  transform: translateY(-15em)
+	opacity: 1;
+	transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateY(-15em);
 }
 
 
@@ -231,16 +253,18 @@ body {
   bottom: -14em;
   transition: all 0.5s ease;
   transform-origin: 0em -11.7em;
+  transition-delay: 0s;
 }
 
 .circle2.slide {
-	transform: rotate(70deg)
+	transform: rotate(70deg);
+	transition-delay: 35ms;
 }
 
 
 .card2-expanded-content {
 	position: relative;
-	transition: transform 0.5s ease, opacity 0.2s ease;
+	transition: transform 0.5s ease, opacity 0.8s ease;
 	top: 8em;
 	left: 8em;
 	opacity: 0;
@@ -271,18 +295,28 @@ body {
 	width: 70%;
 	top: 9.5em;
 	left: 2.3em;
+	opacity: 0;
+	transition: all 0.2s ease;
 }
 
 .rectangle7 {
 	width: 45%;
 	top: 11.5em;
 	left: 2.3em;
+	opacity: 0;
+	transition: all 0.2s ease;
 }
 
 .rectangle8 {
 	width: 55%;
 	top: 13.5em;
 	left: 2.3em;
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+
+.fade-in {
+	opacity: 1;
 }
 
 .rectangle9 {
@@ -309,4 +343,40 @@ body {
 
 .card1-wrapper, .card2-wrapper {
 	margin: 2em;
+}
+
+@media screen and (max-width: 22em) {
+	body {
+		font-size: 85%
+	}	
+}
+
+@media screen and (min-width: 80em) {
+	body {
+		font-size: 120%
+	}	
+}
+
+@media screen and (min-width: 100em) {
+	body {
+		font-size: 140%
+	}	
+}
+
+@media screen and (min-width: 120em) {
+	body {
+		font-size: 170%
+	}	
+}
+
+@media screen and (min-width: 140em) {
+	body {
+		font-size: 210%
+	}	
+}
+
+@media screen and (min-width: 160em) {
+	body {
+		font-size: 280%
+	}	
 }
