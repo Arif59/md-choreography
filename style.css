@@ -354,7 +354,7 @@ body {
 	top: 9.5em;
 	left: 2.3em;
 	opacity: 0;
-	transition: all 0.2s ease;
+	transition: all 0.2s ease 0s;
 }
 
 .rectangle7 {
@@ -362,7 +362,7 @@ body {
 	top: 11.5em;
 	left: 2.3em;
 	opacity: 0;
-	transition: all 0.2s ease;
+	transition: all 0.2s ease 0s;
 }
 
 .rectangle8 {
@@ -370,11 +370,12 @@ body {
 	top: 13.5em;
 	left: 2.3em;
 	opacity: 0;
-	transition: all 0.2s ease;
+	transition: all 0.2s ease 0s;
 }
 
 .fade-in {
 	opacity: 1;
+	transition: all 0.2s ease 0.15s;
 }
 
 .rectangle9 {
