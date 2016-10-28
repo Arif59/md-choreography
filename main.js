@@ -18,4 +18,14 @@ $(document).ready(function(){
 		$('.circle2').toggleClass('slide');
 		$('.rectangle9').toggleClass('fadeout');
 	});
+
+	$(document).on('click', '.card3', function() {
+		$('.card3-clip').toggleClass('expanded');
+		$('.card3').toggleClass('expanded');
+		$('.card3-expanded-content').toggleClass('slide');
+		$('.rectangle11').toggleClass('slide');
+		$('.circle3').toggleClass('slide');
+		$('.rectangle10').toggleClass('fadeout');
+		$('.small-circles').toggleClass('fadeout');
+	});
 });
