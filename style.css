@@ -40,7 +40,7 @@ a, a:link, a:visited {
 
 body {
 	background: #efefef;
-	font-size: 100%
+	font-size: 85%
 }
 
 .wrapper {
@@ -91,6 +91,19 @@ body {
           backface-visibility: hidden;
 }
 
+.card3-clip {
+	width: 21em;
+	height: 20em;
+	-webkit-clip-path: inset(30% 35% 30% 35%);
+	transition: 0.5s;
+	overflow: hidden;
+	border-radius: 3px;
+	will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  pointer-events: none;
+}
+
 
 .card1 {
 	background: #fff;
@@ -119,7 +132,7 @@ body {
   transition: 0s;
   transition-delay: 0s;
   top: 3.2em;
-
+  pointer-events: none;
 }
 
 .separator.show {
@@ -150,8 +163,26 @@ body {
   transition-delay: 0s;
 }
 
+.card3 {
+	background: #fff;
+	width: 21em;
+	height: 20em;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.24);
+	transition: 0.5s;
+	overflow: hidden;
+	border-radius: 3px;
+	position: absolute;
+	cursor: pointer;
+	will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: scale(0.33, 0.4);
+      -ms-transform: scale(0.33, 0.4);
+          transform: scale(0.33, 0.4);
+}
 
-.card1.expanded, .card2.expanded {
+
+.card1.expanded, .card2.expanded, .card3.expanded {
 	-webkit-transform: scale(1, 1);
 	    -ms-transform: scale(1, 1);
 	        transform: scale(1, 1);
@@ -161,14 +192,9 @@ body {
 	transition-delay: 35ms;
 }
 
-.card1-clip.expanded {
+.card1-clip.expanded, .card2-clip.expanded, .card3-clip.expanded {
 	transition: all 0.5s ease;
 	-webkit-clip-path: inset(0 0 0 0);
-}
-
-.card2-clip.expanded {
-	-webkit-clip-path: inset(0 0 0 0);
-	transition: all 0.5s ease;
 }
 
 .card1-collapsed-content {
@@ -186,7 +212,7 @@ body {
           transform: translateY(-6.5em)
 }
 
-.circle, .circle2 {
+.circle, .circle2, .circle3 {
 	border-radius: 100%;
 	width: 3.2em;
 	height: 3.2em;
@@ -243,6 +269,7 @@ body {
   display: inline-block;
   margin: 0.2em;
   border-radius: 5px;
+  pointer-events: none;
 }
 
 .card1-expanded-content {
@@ -312,7 +339,7 @@ body {
 
 
 .rectangle5 {
-	width: 100%;
+	width: 110%;
 	height: 7em;
 	top: -5.2em;
 }
@@ -376,8 +403,136 @@ body {
           backface-visibility: hidden;
 }
 
-.card1-wrapper, .card2-wrapper {
+.card1-wrapper, .card2-wrapper, .card3-wrapper {
 	margin: 2em;
+}
+
+
+
+.circle3 {
+	transition: all 0.5s ease;
+	top: 7.2em;
+	left: 9em;
+	-webkit-transform-origin: 0em -3em;
+	    -ms-transform-origin: 0em -3em;
+	        transform-origin: 0em -3em;
+}
+
+.circle3.slide {
+	-webkit-transform: rotate(120deg);
+	    -ms-transform: rotate(120deg);
+	        transform: rotate(120deg);
+}
+
+.small {
+	height: 1.4em;
+	width: 1.4em;
+}
+
+
+.small-circles {
+	width: 100%;
+	position: relative;
+	right: 0.8em;
+	transition: opacity 0.15s ease 0.25s, -webkit-transform 0.5s ease;
+	transition: transform 0.5s ease, opacity 0.15s ease 0.25s;
+	transition: transform 0.5s ease, opacity 0.15s ease 0.25s, -webkit-transform 0.5s ease;
+	bottom: 0.1em;
+	opacity: 1;
+	will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.small-circles .small {
+	display: inline-block;
+}
+
+.small-circles.fadeout {
+	opacity: 0;
+	transition: opacity 0.15s ease 0s, -webkit-transform 0.5s ease;
+	transition: transform 0.5s ease, opacity 0.15s ease 0s;
+	transition: transform 0.5s ease, opacity 0.15s ease 0s, -webkit-transform 0.5s ease;
+}
+
+
+.rectangle10, .rectangle11 {
+	top: 12.5em;
+	transition: opacity 0.15s ease 0.25s, -webkit-transform 0.5s ease;
+	transition: transform 0.5s ease, opacity 0.15s ease 0.25s;
+	transition: transform 0.5s ease, opacity 0.15s ease 0.25s, -webkit-transform 0.5s ease;
+	width: 4em;
+	left: 8.6em;
+	opacity: 1;
+}
+
+
+.rectangle11 {
+	transition: all 0.5s ease;
+	top: 2.1em;
+	left: 8.5em;
+}
+
+.rectangle11.slide {
+	-webkit-transform: translate(-1em, -4em);
+	    -ms-transform: translate(-1em, -4em);
+	        transform: translate(-1em, -4em);
+}
+
+
+.rectangle10.fadeout {
+	-webkit-transform: translate(-3em, -1em);
+	    -ms-transform: translate(-3em, -1em);
+	        transform: translate(-3em, -1em);
+	opacity: 0;
+	transition: opacity 0.15s ease 0s, -webkit-transform 0.5s ease;
+	transition: transform 0.5s ease, opacity 0.15s ease 0s;
+	transition: transform 0.5s ease, opacity 0.15s ease 0s, -webkit-transform 0.5s ease;
+}
+
+.card3-expanded-content .small {
+	margin: 1.7em;
+	left: 6.3em;
+	top: 7.8em;
+}
+
+
+.card3-expanded-content {
+	position: relative;
+	opacity: 0;
+	transition: opacity 0.15s ease, -webkit-transform 0.5s ease;
+	transition: transform 0.5s ease, opacity 0.15s ease;
+	transition: transform 0.5s ease, opacity 0.15s ease, -webkit-transform 0.5s ease;
+	transition-delay: 0.1s;
+	will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card3-expanded-content.slide {
+	position: relative;
+	opacity: 1;
+}
+
+.card3-expanded-rectangles {
+	width: 100%;
+	height: 100%;
+}
+
+.card3-expanded-rectangles .rectangle11 {
+	width: 10.5em;
+	top: 7.2em;
+	background: #dedede;
+}
+
+.card3-expanded-rectangles .rectangle11:nth-child(2) {
+	top: 10.4em;
+	width: 7em;
+}
+
+.card3-expanded-rectangles .rectangle11:nth-child(3) {
+	top: 13.5em;
+	width: 9em;
 }
 
 @media screen and (max-width: 22em) {
@@ -388,30 +543,30 @@ body {
 
 @media screen and (min-width: 80em) {
 	body {
-		font-size: 120%
+		font-size: 105%
 	}	
 }
 
 @media screen and (min-width: 100em) {
 	body {
-		font-size: 140%
+		font-size: 125%
 	}	
 }
 
 @media screen and (min-width: 120em) {
 	body {
-		font-size: 170%
+		font-size: 155%
 	}	
 }
 
 @media screen and (min-width: 140em) {
 	body {
-		font-size: 210%
+		font-size: 195%
 	}	
 }
 
 @media screen and (min-width: 160em) {
 	body {
-		font-size: 280%
+		font-size: 255%
 	}	
 }
