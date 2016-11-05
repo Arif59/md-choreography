@@ -189,7 +189,7 @@ body {
 }
 
 .card2.expanded {
-	transition-delay: 35ms;
+	transition-delay: 30ms;
 }
 
 .card1-clip.expanded, .card2-clip.expanded, .card3-clip.expanded {
