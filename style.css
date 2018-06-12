@@ -68,8 +68,9 @@ body {
 	width: 18em;
 	height: 20em;
 	transition: all 0.4s ease;
-	overflow: hidden;
+/* 	overflow: hidden; */
 	-webkit-clip-path: inset(36% 0 36% 0);
+  clip-path: inset(36% 0 36% 0);
 	position: relative;
 	border-radius: 3px;
 	pointer-events: none;
@@ -82,8 +83,9 @@ body {
 	width: 21em;
 	height: 20em;
 	-webkit-clip-path: inset(65% 0 0 68%);
+  clip-path: inset(65% 0 0 68%);
 	transition: 0.5s;
-	overflow: hidden;
+/* 	overflow: hidden; */
 	pointer-events: none;
 	border-radius: 3px;
 	will-change: transform;
@@ -95,8 +97,9 @@ body {
 	width: 21em;
 	height: 20em;
 	-webkit-clip-path: inset(30% 35% 30% 35%);
+  clip-path: inset(30% 35% 30% 35%);
 	transition: 0.5s;
-	overflow: hidden;
+/* 	overflow: hidden; */
 	border-radius: 3px;
 	will-change: transform;
   -webkit-backface-visibility: hidden;
@@ -189,12 +192,13 @@ body {
 }
 
 .card2.expanded {
-	transition-delay: 30ms;
+	transition-delay: 35ms;
 }
 
 .card1-clip.expanded, .card2-clip.expanded, .card3-clip.expanded {
 	transition: all 0.5s ease;
 	-webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
 }
 
 .card1-collapsed-content {
